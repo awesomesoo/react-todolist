@@ -1,4 +1,5 @@
-import React, { useReducer, createContext, useContext } from "react";
+import React, { useReducer, createContext, useContext, useRef } from "react";
+
 /* 
 리듀서 만들기 :
 useReducer 를 사용하여 상태를 관리. 
@@ -41,25 +42,27 @@ const todoReducer = (state, action) => {
       throw new Error(`Unhandled action type: ${action.type}`);
   }
 };
+
 /* 
 Context 만들기 :
-
-이제, state 와 dispatch 를 Context 통하여 다른 컴포넌트에서 바로 사용 할 수 있게 해줄건데요, 
-우리는 하나의 Context 를 만들어서 state 와 dispatch 를 함께 넣어주는 대신에, 
-두개의 Context 를 만들어서 따로 따로 넣어줄 것입니다. 
-
-이렇게 하면 dispatch 만 필요한 컴포넌트에서 불필요한 렌더링을 방지 할 수 있습니다. 
-추가적으로, 사용하게 되는 과정에서 더욱 편리하기도 합니다.
+1. state를 위한 Context와  dispatch를 위한 Context 를 따로 만들기.
+   이렇게 하면 dispatch 만 필요한 컴포넌트에서 불필요한 렌더링을 방지 할 수 있고, 사용하게 되는 과정에서 더욱 편리하기도 하다.
+2. nextId를 위한 Context도 추가 해줬다.
+    nextId 가 의미하는 값은 새로운 항목을 추가 할 때 사용 할 고유 ID 이다.
 */
 const TodoStateContext = createContext();
 const TodoDispatchContext = createContext();
+const TodoNextIdContext = createContext();
 
 export const TodoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
+  const nextId = useRef(5);
   return (
     <TodoStateContext.Provider value={state}>
       <TodoDispatchContext.Provider value={dispatch}>
-        {children}
+        <TodoNextIdContext.Provider value={nextId}>
+          {children}
+        </TodoNextIdContext.Provider>
       </TodoDispatchContext.Provider>
     </TodoStateContext.Provider>
   );
@@ -75,4 +78,8 @@ export const useTodoState = () => {
 };
 export const useTodoDispatch = () => {
   return useContext(TodoDispatchContext);
+};
+
+export const useTodoNextId = () => {
+  return useContext(TodoNextIdContext);
 };
