@@ -1,7 +1,6 @@
-import React, { useReducer, createContext } from "react";
+import React, { useReducer, createContext, useContext } from "react";
 /* 
 리듀서 만들기 :
-
 useReducer 를 사용하여 상태를 관리. 
 */
 
@@ -56,3 +55,16 @@ export const TodoProvider = ({ children }) => {
     </TodoStateContext.Provider>
   );
 };
+
+export const useTodoState = () => {
+  return useContext(TodoStateContext);
+};
+export const useTodoDispatch = () => {
+  return useContext(TodoDispatchContext);
+};
+
+/* 
+커스텀 Hook 만들기:
+컴포넌트에서 useContext 를 직접 사용하는 대신에, 
+useContext 를 사용하는 커스텀 Hook 을 만들어서 내보내주겠습니다.
+*/
