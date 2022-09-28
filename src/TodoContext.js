@@ -97,13 +97,13 @@ export const useTodoNextId = () => {
 TodoProvider 바깥에서 컨텍스트를 사용하려면 에러가 뜬다.
 그러면 잘못된 곳에서 함수를 호출했구나를 알 수 있다.
 */
-export const useTodoState = () => {
+export function useTodoState() {
   const context = useContext(TodoStateContext);
   if (!context) {
     throw new Error("Cannot find TodoProvider");
   }
   return context;
-};
+}
 export const useTodoDispatch = () => {
   const context = useContext(TodoDispatchContext);
   if (!context) {
