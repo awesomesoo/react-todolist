@@ -2,6 +2,8 @@
 
 ## 💜1. 프로젝트 UI 구현 (컴포넌트 만들기)
 
+![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnQG8W%2FbtrNcV4ZzBO%2F2diC6twZUxLTYbcZEGrDM0%2Fimg.png)
+
 ### 컴포넌트 종류
 
 ### TodoProvider
