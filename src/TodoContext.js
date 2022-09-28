@@ -93,6 +93,9 @@ export const useTodoNextId = () => {
 (예: App 컴포넌트에서 모든 내용을 TodoProvider 로 감싸기). 
 만약 TodoProvider 로 감싸져있지 않다면 에러를 발생시키도록 
 커스텀 Hook 을 수정.
+
+TodoProvider 바깥에서 컨텍스트를 사용하려면 에러가 뜬다.
+그러면 잘못된 곳에서 함수를 호출했구나를 알 수 있다.
 */
 export const useTodoState = () => {
   const context = useContext(TodoStateContext);
