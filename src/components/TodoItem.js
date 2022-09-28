@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
 import { useTodoDispatch } from "../TodoContext";
@@ -80,4 +81,7 @@ const TodoItem = ({ id, done, text }) => {
   );
 };
 
-export default TodoItem;
+/* 
+이렇게 하면, 다른 항목이 업데이트 될 때, 
+불필요한 리렌더링을 방지하게 되어 성능을 최적화 할 수 있게 됩니다. */
+export default React.memo(TodoItem);
