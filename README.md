@@ -40,4 +40,6 @@ Todo Template의 하단부에 초록색 원 버튼을 렌더링 해주고, 이�
 
 ## 💜2. Context API 를 활용한 상태 관리
 
+![img](https://blog.kakaocdn.net/dn/brocUy/btrNdo6YQie/Rpw2EQFxkb8DhqM6wOKJK1/img.png)
+
 ## 💜3. 기능 구현하기
