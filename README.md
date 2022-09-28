@@ -35,7 +35,6 @@ useReducer 를 사용하여 상태를 관리하는 컴포넌트이다.
 새로운 할 일을 등록할 수 있게 해주는 컴포넌트이다.
 Todo Template의 하단부에 초록색 원 버튼을 렌더링 해주고, 이를 클릭하면 할 일을 입력할 수 있는 폼이 나타난다.
 버튼을 다시 누르면 폼이 사라진다.
-![img](https://blog.kakaocdn.net/dn/brocUy/btrNdo6YQie/Rpw2EQFxkb8DhqM6wOKJK1/img.png)
 
 #### 정리 : https://awesome-soo.tistory.com/41
 
