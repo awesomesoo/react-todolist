@@ -1,4 +1,4 @@
-# Todo List 만들기
+# REACT To-do List
 
 ## 💜1. 프로젝트 UI 구현 (컴포넌트 만들기)
 
