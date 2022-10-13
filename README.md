@@ -58,4 +58,4 @@ Todo Template의 하단부에 초록색 원 버튼을 렌더링 해주고, 이�
 
 #### 결과
 
-https://uxuisooa.github.io/react-todolist/
+https://awesomesoo.github.io/react-todolist/
